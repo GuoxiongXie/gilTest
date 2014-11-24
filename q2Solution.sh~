@@ -1,0 +1,4 @@
+FILES=./gileadTechnicalEval/*.fastq.gz
+for f in $FILES
+do
+    
