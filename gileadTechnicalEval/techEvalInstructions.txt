@@ -1,0 +1,26 @@
+1) Code in SQL
+create two tables sequence_read and sequence_stats
+sequence_stats table should have columns sequence_name, sequence_length, percentA, percentC, percentG, percentT, avg_quality
+sequence_read table should have columns file_name, sequence_name, chopped_read, chopped_quality
+create primary keys for each table
+create foreign key between the two tables
+
+2) Code in Bash
+unzip fastq files
+loop through fastq files and run script fastq_to_fasta_qual.pl on each file
+call Perl script below
+
+3) Code in Perl
+open each set of fasta/qual files
+loop through each sequence read and quality read in corresponding files
+trim 15 bases off 3' end of each sequence read and quality read
+after trim, exclude reads < 50bp
+calculate sequence_length, percentA, percentC, percentG, percentT, and average quality score per read
+
+output:
+create text file with sql statements insert into sequence_stats table sequence_name, sequence_length, percentA, percentC, percentG, percentT, avg_quality
+insert into sequence_read table file_name, sequence_name, chopped_read, chopped_quality
+
+
+4) SQL 
+create sql statement that will find files with >10 reads that have motif "ACGT" and average quality > 30
