@@ -12,7 +12,7 @@ call Perl script below
 
 3) Code in Perl
 open each set of fasta/qual files
-loop through each sequence read and quality read in corresponding files
+loop through each sequence read (*.fastq.fasta) and quality read (*.fastq.qual) in corresponding files
 trim 15 bases off 3' end of each sequence read and quality read
 after trim, exclude reads < 50bp
 calculate sequence_length, percentA, percentC, percentG, percentT, and average quality score per read
